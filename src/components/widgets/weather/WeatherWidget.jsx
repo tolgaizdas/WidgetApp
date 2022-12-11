@@ -49,6 +49,7 @@ export default function WeatherWidget() {
       const weatherData = await getWeatherData(city);
       // console.log(weatherData);
       setData(weatherData);
+      setCity("");
       console.clear();
     }
   };
@@ -67,6 +68,7 @@ export default function WeatherWidget() {
           feelsLike={data.main.feels_like}
           weather={data.weather[0].main}
           weatherDescription={data.weather[0].description}
+          weatherIcon={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
         />
       ) : (
         <h4>No city found.</h4>
