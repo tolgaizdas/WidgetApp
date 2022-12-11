@@ -8,7 +8,7 @@ export default async function getWeatherData(city) {
     });
 }
 
-function getCityFromCoord(lat, lon) {
+export async function getCityFromCoord(lat, lon) {
   return fetch(
     `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}`
   )

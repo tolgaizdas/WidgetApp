@@ -1,28 +1,11 @@
 import React, { useEffect, useState } from "react";
 import SearchWeather from "./SearchWeather";
-import getWeatherData from "../../../api/open-weather/openWeatherAPI";
+import getWeatherData, {
+  getCityFromCoord,
+} from "../../../api/open-weather/openWeatherAPI";
 import WeatherInformation from "./WeatherInformation";
 
 export default function WeatherWidget() {
-  let currentLocation = null;
-  useEffect(() => {
-    // only runs once
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          //   console.log(position);
-          currentLocation = position;
-        });
-      }
-    }
-
-    getLocation();
-  }, []); // empty dependencies array
-
-  const [city, setCity] = useState(
-    currentLocation !== null ? currentLocation : ""
-  );
-
   const emptyData = {
     name: "",
     main: {
@@ -38,6 +21,32 @@ export default function WeatherWidget() {
   };
 
   const [data, setData] = useState(emptyData);
+
+  const [city, setCity] = useState("");
+
+  useEffect(() => {
+    let currentLocation = null;
+    let currentCity = null;
+    let currentData = null;
+    // only runs once
+    function getCurrentLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+          // console.log(position);
+          currentLocation = position;
+          if (currentLocation !== null) {
+            currentCity = await getCityFromCoord(
+              currentLocation.coords.latitude,
+              currentLocation.coords.longitude
+            );
+            currentData = await getWeatherData(currentCity[0].name);
+          }
+          setData(currentData !== null ? currentData : emptyData);
+        });
+      }
+    }
+    getCurrentLocation();
+  }); // empty dependencies array
 
   const handleInput = (event) => {
     const query = event.target.value;
