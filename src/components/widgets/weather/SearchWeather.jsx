@@ -16,7 +16,7 @@ export default function SearchWeather(props) {
         className="btn btn-primary btn-lg col-12"
         onClick={props.searchWeather}
       >
-        +
+        Search
       </button>
     </div>
   );
