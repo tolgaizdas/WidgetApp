@@ -4,8 +4,9 @@ export default function ClockWidget() {
   const [time, setTime] = useState(new Date());
   const [clock, setClock] = useState("--:--:--");
   const [date, setDate] = useState("--/--/----");
+  const [day, setDay] = useState("-");
 
-  let hours, minutes, seconds, dd, mm, yyyy;
+  let hours, minutes, seconds, dd, mm, yyyy, dayName;
 
   const updateTime = () => {
     setTime(new Date());
@@ -18,16 +19,43 @@ export default function ClockWidget() {
     mm = String(time.getMonth() + 1); //January is 0!
     yyyy = time.getFullYear();
 
+    switch (time.getDay()) {
+      case 0:
+        dayName = "Sunday";
+        break;
+      case 1:
+        dayName = "Monday";
+        break;
+      case 2:
+        dayName = "Tuesday";
+        break;
+      case 3:
+        dayName = "Wednesday";
+        break;
+      case 4:
+        dayName = "Thursday";
+        break;
+      case 5:
+        dayName = "Friday";
+        break;
+      case 6:
+        dayName = "Saturday";
+        break;
+      default:
+        dayName = "";
+    }
     setClock(`${hours}:${minutes}:${seconds}`);
     setDate(`${dd}/${mm}/${yyyy}`);
+    setDay(dayName);
   };
 
   setTimeout(updateTime, 1000);
 
   return (
     <div>
-      <h2>{clock}</h2>
-      <h5>{date}</h5>
+      <h3>{clock}</h3>
+      <h5>{day}</h5>
+      <h6>{date}</h6>
     </div>
   );
 }

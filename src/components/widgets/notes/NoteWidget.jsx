@@ -6,7 +6,7 @@ export default function NoteWidget() {
   const [notes, setNotes] = useState([
     {
       title: "Hi there!",
-      content: "Press + to add new notes",
+      content: "Press + to add new notes.",
       date: {
         dd: new Date().getDate(),
         mm: String(new Date().getMonth() + 1), //January is 0!

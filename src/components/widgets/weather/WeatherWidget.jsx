@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SearchWeather from "./SearchWeather";
-import getWeatherData from "../../../api/openWeather/openWeatherAPI";
+import getWeatherData from "../../../api/open-weather/openWeatherAPI";
 import WeatherInformation from "./WeatherInformation";
 
 export default function WeatherWidget() {
@@ -45,10 +45,12 @@ export default function WeatherWidget() {
   };
 
   const searchWeather = async () => {
-    const weatherData = await getWeatherData(city);
-    // console.log(weatherData);
-    setData(weatherData);
-    console.clear();
+    if (city.trim() !== "") {
+      const weatherData = await getWeatherData(city);
+      // console.log(weatherData);
+      setData(weatherData);
+      console.clear();
+    }
   };
 
   return (
@@ -58,7 +60,7 @@ export default function WeatherWidget() {
         handleInput={handleInput}
         searchWeather={searchWeather}
       />
-      {data.cod !== "404" && data !== emptyData ? (
+      {data.cod !== "404" && data !== emptyData && data.name !== "" ? (
         <WeatherInformation
           city={data.name}
           temp={data.main.temp}
