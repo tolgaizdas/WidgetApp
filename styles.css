@@ -1,0 +1,26 @@
+body {
+    align-items: center;
+    text-align: center;
+    color: rgb(50, 50, 50);
+}
+
+div {
+    margin: 10px;
+}
+
+textarea {
+    resize: none;
+}
+
+p {
+    font-size: large;
+}
+
+.widget {
+    display: inline-block;
+    border: 2px solid rgb(144, 144, 144);
+}
+
+.widget-template {
+    border-bottom: 1px solid rgb(144, 144, 144);
+}
