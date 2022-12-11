@@ -46,7 +46,7 @@ export default function WeatherWidget() {
       }
     }
     getCurrentLocation();
-  }); // empty dependencies array
+  }, []); // empty dependencies array
 
   const handleInput = (event) => {
     const query = event.target.value;
