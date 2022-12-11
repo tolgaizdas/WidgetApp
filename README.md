@@ -16,7 +16,7 @@ This app is my first experience after learning React.js and I will be adding mor
 - **Weather**
 
   A widget that displays the current weather (city name, temperature, feels like temperature...) for the searched city. [Used [OpenWeatherAPI](https://openweathermap.org/api)]
-  
+
 - **Social Media**
 
-  By using this widget you can add outgoing links to your social media accounts. [Trying to add favicons next to them.]
+  By using this widget you can add outgoing links to your social media accounts.

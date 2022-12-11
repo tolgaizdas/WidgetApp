@@ -4,6 +4,7 @@ export default async function getWeatherData(city) {
   )
     .then((res) => res.json())
     .then((json) => {
+      // console.clear();
       return json;
     });
 }
@@ -14,6 +15,7 @@ export async function getCityFromCoord(lat, lon) {
   )
     .then((res) => res.json())
     .then((json) => {
+      // console.clear();
       return json;
     });
 }

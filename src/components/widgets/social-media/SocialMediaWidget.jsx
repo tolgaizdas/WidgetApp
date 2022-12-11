@@ -34,10 +34,14 @@ export default function SocialMediaWidget() {
     });
   };
 
+  function getPosition(string, subString, index) {
+    return string.split(subString, index).join(subString).length;
+  }
+
   const addSocialMedia = () => {
-    // socialMedia.icon = await getIcon(
-    //   `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${socialMedia.link}`
-    // );
+    socialMedia.icon =
+      socialMedia.link.substring(0, getPosition(socialMedia.link, "/", 3)) +
+      "/favicon.ico";
 
     if (socialMedia.name.trim() !== "" && socialMedia.link.trim() !== "") {
       setSocialMedias((prev) => {

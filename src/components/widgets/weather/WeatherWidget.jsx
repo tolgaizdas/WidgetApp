@@ -39,13 +39,16 @@ export default function WeatherWidget() {
               currentLocation.coords.latitude,
               currentLocation.coords.longitude
             );
+            // console.log(currentCity);
             currentData = await getWeatherData(currentCity[0].name);
+            // console.log(currentData);
           }
           setData(currentData !== null ? currentData : emptyData);
         });
       }
     }
     getCurrentLocation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // empty dependencies array
 
   const handleInput = (event) => {

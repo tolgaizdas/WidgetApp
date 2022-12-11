@@ -1,5 +1,7 @@
 import React from "react";
 
 export default function Icon(props) {
-  return <img alt="icon" src={props.src}></img>;
+  return (
+    props.src.indexOf("https") !== -1 && <img alt="icon" src={props.src}></img>
+  );
 }
