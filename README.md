@@ -14,4 +14,4 @@ This app is my first experience after learning React.js and I will be adding mor
 
 + **Weather**
 
-  Widget showing instant weather. [Under construction.] [Will be done using API.]
+  A widget that displays the current weather (city name, temperature, feels like temperature...) for the searched city. [Used [OpenWeatherAPI](https://openweathermap.org/api)]
