@@ -19,4 +19,4 @@ This app is my first experience after learning React.js and I will be adding mor
 
 - **Social Media**
 
-  By using this widget you can add outgoing links to your social media accounts.
+  By using this widget you can add outgoing links to your social media accounts. [Favicons added.]
