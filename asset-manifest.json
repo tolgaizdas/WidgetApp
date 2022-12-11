@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/widgetapp/static/js/main.bfcfa981.js",
-    "index.html": "/widgetapp/index.html",
-    "main.bfcfa981.js.map": "/widgetapp/static/js/main.bfcfa981.js.map"
+    "main.js": "/WidgetApp/static/js/main.bfcfa981.js",
+    "index.html": "/WidgetApp/index.html",
+    "main.bfcfa981.js.map": "/WidgetApp/static/js/main.bfcfa981.js.map"
   },
   "entrypoints": [
     "static/js/main.bfcfa981.js"
