@@ -11,7 +11,7 @@ export default async function getWeatherData(city) {
 
 export async function getCityFromCoord(lat, lon) {
   return fetch(
-    `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}`
+    `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}`
   )
     .then((res) => res.json())
     .then((json) => {
