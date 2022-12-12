@@ -1,15 +1,13 @@
 import React from "react";
-import WidgetTemplate from "../WidgetTemplate";
+import Widget from "../Widget";
 import NoteWidget from "./NoteWidget";
 
 export default function Notes() {
   return (
-    <div className="widget">
-      <WidgetTemplate
-        widgetName={"Notes"}
-        widgetDescription={"Enjoy taking notes!"}
-      />
-      <NoteWidget />
-    </div>
+    <Widget
+      widgetName={"Notes"}
+      widgetDescription={"Enjoy taking notes!"}
+      widget={<NoteWidget />}
+    />
   );
 }

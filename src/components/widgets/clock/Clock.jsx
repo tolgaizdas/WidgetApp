@@ -1,15 +1,13 @@
 import React from "react";
-import WidgetTemplate from "../WidgetTemplate";
+import Widget from "../Widget";
 import ClockWidget from "./ClockWidget";
 
 export default function Clock() {
   return (
-    <div className="widget">
-      <WidgetTemplate
-        widgetName={"Clock"}
-        widgetDescription={"Time is money!"}
-      />
-      <ClockWidget />
-    </div>
+    <Widget
+      widgetName={"Clock"}
+      widgetDescription={"Time is money!"}
+      widget={<ClockWidget />}
+    />
   );
 }

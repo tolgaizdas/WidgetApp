@@ -1,15 +1,13 @@
 import React from "react";
-import WidgetTemplate from "../WidgetTemplate";
+import Widget from "../Widget";
 import WeatherWidget from "./WeatherWidget";
 
 export default function Weather() {
   return (
-    <div className="widget">
-      <WidgetTemplate
-        widgetName={"Weather"}
-        widgetDescription={"No need to look at the sky..."}
-      />
-      <WeatherWidget />
-    </div>
+    <Widget
+      widgetName={"Weather"}
+      widgetDescription={"No need to look at the sky..."}
+      widget={<WeatherWidget />}
+    />
   );
 }
