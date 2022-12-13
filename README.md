@@ -11,7 +11,7 @@ This app is my first experience after learning React.js and I will be adding mor
 
 - **Notes**
 
-  A widget where you can take notes. [Database will be added for saving notes.]
+  A widget where you can take notes. [Database will be added to save notes.]
 
 - **Weather**
 
